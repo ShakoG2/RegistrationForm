@@ -1,6 +1,6 @@
 Ext.define("AP.model.Customers",{
     extend:"Ext.data.Model",
-    fields:["id","type","firstName","lastName","name","orgType","privateNumber","idNumber","region","district",
+    fields:["id","type","firstName","lastName","date","name","orgType","privateNumber","idNumber","region","district",
         {
             name:"nameall",
             calculate:function (data){
@@ -19,7 +19,6 @@ Ext.define("AP.model.Customers",{
                         break;
                     }
                      return `${x} ${data.name}`;
-                    // return `${x} ${data.name}`;
                 }
             }
         },{
@@ -31,20 +30,6 @@ Ext.define("AP.model.Customers",{
                     return data.idNumber;
                 }
             }
-        },{
-           // name:"bDay",
-           //  calculate:function (data){
-           //     var obj=JSON.parse(data,function(key, value){
-           //         if(key=="birth"){
-           //             return new Date(value);
-           //         }else{
-           //             return value;
-           //         }
-           //     })
-           //  }
-        },{
-            name:"birth",
-            type:"date"
         }],
     proxy:{
         url:"https://softlab-api.softgen.ge/shako/customers",

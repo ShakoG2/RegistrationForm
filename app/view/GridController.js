@@ -1,5 +1,6 @@
 Ext.define("AP.view.GridController",{
     extend:"Ext.app.ViewController",
+    requires:["AP.model.Districts","AP.model.Regions","AP.model.Customers"],
     typeRenderer: function (type) {
         const personType = this.getViewModel().getStore("personType").getById(type);
         return personType.get("name");
@@ -12,8 +13,8 @@ Ext.define("AP.view.GridController",{
     },
     districtRenderer:function (district){
         const districtsOne= this.getViewModel().getStore("districtsStore").getById(district);
-        console.log(district);
-        console.log(districtsOne);
+        // console.log(district);
+        // console.log(districtsOne);
         return districtsOne.get("name");
     }
 })

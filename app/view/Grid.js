@@ -36,9 +36,11 @@ Ext.define("AP.view.Grid",{
         flex:1,
         renderer:"districtRenderer"
     },{
+        xtype:"datecolumn",
         text:"დაბადების თარიღი",
-        dataIndex:"birth",
+        dataIndex:"date",
         flex:1,
-        // renderer: Ext.util.Format.dateRenderer('d.m.Y')
+        format:"Y/m/d"
+        // // renderer: Ext.util.Format.dateRenderer('d.m.Y')
     }]
 })

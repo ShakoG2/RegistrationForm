@@ -80,6 +80,9 @@ Ext.define("AP.view.Main",{
                 xtype:"textfield",
                 fieldLabel:"საიდენთიფიკაციო ნომერი",
                 name:"idNumber",
+                regex: /^[0-9 ]+$/,
+                maxLength: 11,
+                minLength:6,
                 bind:{
                     hidden:"{!legalEntity}",
                     disabled:"{!legalEntity}",
@@ -127,7 +130,8 @@ Ext.define("AP.view.Main",{
                 xtype: 'datefield',
                 // anchor: '100%',
                 fieldLabel: 'დაბადების თარიღი',
-                name: 'birth',
+                name:'date',
+                format:"Y/m/d"
                 // value: new Date(),
             },{
                 xtype:"button",
